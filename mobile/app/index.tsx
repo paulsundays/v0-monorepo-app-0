@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { Feather } from '@expo/vector-icons'
 
 const projects = [
@@ -61,14 +62,8 @@ const projects = [
 
 export default function Index() {
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Marketplace de Créditos de Carbono</Text>
-        <Text style={styles.subtitle}>
-          Explora y compra créditos de carbono verificados de proyectos ambientales en
-          Latinoamérica
-        </Text>
-      </View>
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView style={styles.container} contentContainerStyle={styles.content}>
 
       <View style={styles.filterCard}>
         <View style={styles.filterHeader}>
@@ -145,6 +140,7 @@ export default function Index() {
         <Text style={styles.loadMoreText}>Cargar Más Proyectos</Text>
       </TouchableOpacity>
     </ScrollView>
+  </SafeAreaView>
   )
 }
 
@@ -157,16 +153,9 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingBottom: 40,
   },
-  header: {
-    marginBottom: 16,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 4,
-  },
-  subtitle: {
-    color: '#6b7280',
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#f9fafb',
   },
   filterCard: {
     backgroundColor: '#fff',

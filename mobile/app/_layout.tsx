@@ -1,12 +1,17 @@
-import { Tabs } from 'expo-router'
+import { withLayoutContext } from 'expo-router'
 import { Feather } from '@expo/vector-icons'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+
+const TabNavigator = withLayoutContext(createMaterialTopTabNavigator().Navigator)
 
 export default function RootLayout() {
   return (
-    <Tabs
+    <TabNavigator
       screenOptions={{
         headerShown: false,
+        swipeEnabled: true,
         tabBarActiveTintColor: '#16a34a',
+        tabBarPosition: 'bottom',
         tabBarStyle: {
           backgroundColor: '#fff',
           borderTopColor: '#e5e7eb',
@@ -14,7 +19,7 @@ export default function RootLayout() {
         },
       }}
     >
-      <Tabs.Screen
+      <TabNavigator.Screen
         name="index"
         options={{
           title: 'Inicio',
@@ -23,7 +28,7 @@ export default function RootLayout() {
           ),
         }}
       />
-      <Tabs.Screen
+      <TabNavigator.Screen
         name="projects"
         options={{
           title: 'Proyectos',
@@ -32,7 +37,7 @@ export default function RootLayout() {
           ),
         }}
       />
-      <Tabs.Screen
+      <TabNavigator.Screen
         name="contact"
         options={{
           title: 'Contacto',
@@ -41,6 +46,6 @@ export default function RootLayout() {
           ),
         }}
       />
-    </Tabs>
+    </TabNavigator>
   )
 }

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "sun-and-market",
+    "slug": "sun-and-market",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,14 +9,32 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pdominguez.sunandmarket",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "icon": {
+        "dark": "./assets/images/sundays-icon.png",
+        "light": "./assets/images/sundays-icon.png",
+        "tinted": "./assets/images/sundays-icon.png"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/sundays-icon.png",
+        "backgroundColor": "#ffffff",
+        "backgroundImage": "./assets/images/sundays-icon.png"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.paulsundays.sunandmarket",
+      "versionCode": 1
+    },
+     "submit": {
+      "production": {
+        "ios": {
+          "ascAppId": "6747617280"
+        }
+      }
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +55,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e5d123d4-709b-46a9-8cdd-8b539e988ad9"
+      }
+    },
+    "owner": "pdominguez0998expo"
   }
 }
